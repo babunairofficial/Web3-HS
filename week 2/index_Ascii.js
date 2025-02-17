@@ -33,3 +33,19 @@ function asciiToBytes(asciiString) {
   const byteArray = asciiToBytes(ascii);
   //display the byte characters 
   console.log(byteArray);
+
+/**-------------------------------
+ * UInt8Array to Ascii conversion
+ * -------------------------------
+ */
+//function declare
+function uIntEightArrayToAscii(bytes) {
+    //TextDecoder provides a more efficient conversion for TypedArrays
+    return new TextDecoder().decode(byteArray);
+}
+//Unsigned Integer Octet Array
+const uIntOctetArray = new Uint8Array ([72, 101, 108, 108, 111]);
+//declarea a variable to store the resultant value of the function called.
+const asciiString2 = uIntEightArrayToAscii(uIntOctetArray);
+//log the ascii String
+console.log(asciiString2);
