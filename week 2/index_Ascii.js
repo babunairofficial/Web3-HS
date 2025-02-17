@@ -49,3 +49,18 @@ const uIntOctetArray = new Uint8Array ([72, 101, 108, 108, 111]);
 const asciiString2 = uIntEightArrayToAscii(uIntOctetArray);
 //log the ascii String
 console.log(asciiString2);
+
+/**--------------------
+ * Ascii to UInt8Array
+ * --------------------
+ */
+//function declare
+function asciiToUintOctetArray(asciiString) {
+    return new Uint8Array(asciiString.split("").map((c) => c.charCodeAt(0)));
+  }
+  //ascii character
+  const ascii2 = "Hello World";
+  //declare a variable to store the resultant value of the function called.
+  const uIntOctetArray2 = asciiToUintOctetArray(ascii2);
+  //log the uInt8Array
+  console.log(uIntOctetArray2);
