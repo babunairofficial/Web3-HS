@@ -27,3 +27,18 @@ const byteArray = new Uint8Array([72, 101, 108, 108, 111]); //"Hello"
 const base58String = uint8ArrayToBase58(byteArray);
 //Log the result on the console.
 console.log(base58String);
+
+
+/*----------- Decoding -------------*/
+//Use the bs58 library's decode function to convert the Base58 stirng to byte array
+function base58ToUint8Array(base58String) {
+    return bs58.decode(base58String);
+}
+
+//Base58 String
+const base58 = base58String; // Use the previously encoded Base58 string
+
+//Convert the Uint8Array to a Base58 encoded string
+const uIntOctetArray = base58ToUint8Array(base58);
+//Log the result on the console.
+console.log(uIntOctetArray);
