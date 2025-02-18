@@ -18,3 +18,26 @@ const arr = new Uint8Array([72, 101, 108, 108, 111]); //"Hello"
 const hexString = arrayToHex(arr);
 //Output the result to console. 
 console.log(hexString); // Output - "48656c6c6f"
+
+/**------------------------
+ * Hex to Array conversion
+ * ------------------------
+ */
+//declare a function for the converstion
+function hexToArray(hexString) {
+    //split the hex string into chunks of two characters (or one if at the end)
+    //hexString.match(/.(1,2)/g) does the following:
+        //1. Takes the input string (like "48656c6cf")
+        //2. Breaks it into chunks of two characters: ["48", "65", "6c", "6c", "f"]
+
+    return hexString.match(/.{1,2}/g).map(h => parseInt(h, 16));
+    //for each chunk in the array, convert from hex (base 18) to decimal
+    //"48" becomes 72, "65" becomes 101, etc. 
+}
+//Hex string
+const hex = "48656c6cf"; //"Hello"
+
+//call the coversion function to get the Unsigned Integer Octet Array representaiton of "Hello"
+const hexToByteArray = hexToArray(hex);
+//output the result to console.
+console.log(hexToByteArray);
